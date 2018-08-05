@@ -1,4 +1,8 @@
 {
+    "cmake.buildDirectory": "${workspaceRoot}/build",
+    "cmake.configureSettings": {
+        "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/build/install"
+    },
     "cmake.configureOnOpen": false,
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
     "C_Cpp.configurationWarnings": "Disabled",
