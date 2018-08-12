@@ -13,6 +13,9 @@ endif()
 
 # Prevent overriding the parent project's compiler/linker settings on Windows
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+# Request googlemock (use Matchers from gmock)
+# googletest is subpart of googlemock
+set(BUILD_GMOCK ON)
 
 # Add googletest directly to our build. This defines the gtest and gtest_main targets.
 add_subdirectory(${GOOGLETEST_SRC_DIR}
@@ -62,7 +65,7 @@ target_compile_definitions(flatbuffers_tests
   FLATBUFFERS_FBS_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/tests/\"
 )
 
-target_link_libraries(flatbuffers_tests PRIVATE gtest gtest_main)
+target_link_libraries(flatbuffers_tests PRIVATE gtest gtest_main gmock)
 target_link_libraries(flatbuffers_tests PRIVATE flatbuffers)
 add_dependencies(flatbuffers_tests flatc)
 add_dependencies(flatbuffers_tests flattests)

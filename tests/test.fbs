@@ -1,3 +1,100 @@
+namespace fbt; // flatbuffers test
+
+table tGrammarTest
+{
+  // json-incompatible hexdecimal numbers (negative also)
+  f1 : int = 0x12;
+  f2 : int = 0X13;
+  f3 : int = -0x14;
+  f4 : int = -0X15;
+  // json-incompatible leading zeros
+  f6 : int = 01;
+  f7 : int = -02;
+
+  // json-incompatible float without digit after comma-point
+  f8 : float = -01.;
+}
+
 table tEmpty
 {
+}
+
+table ttEmpty
+{
+  f1 : tEmpty;
+}
+
+table tStr
+{
+  f1 : string;
+}
+
+table tStrStr
+{
+  f1 : string;
+  f2 : string;
+}
+
+table tStrStrStr
+{
+  f1 : string;
+  f2 : string;
+  f3 : string;
+}
+
+table tStrInt
+{
+  f1 : string;
+  f2 : int;
+}
+
+table tStrIntInt
+{
+  f1 : string;
+  f2 : int;
+  f3 : int;
+}
+
+table tInt
+{
+  f1 : int;
+}
+
+table tIntInt
+{
+  f1 : int;
+  f2 : int;
+}
+
+table tIntIntInt
+{
+  f1 : int;
+  f2 : int;
+}
+
+table tIntVInt
+{
+  f1 : int;
+  f2 : [int];
+}
+
+table tBool
+{
+  f1 : bool;
+}
+
+table tFloat
+{
+  f1 : float;
+}
+
+table tStrBool
+{
+  f1 : string;
+  f2 : bool;
+}
+
+table tIntBool
+{
+  f1 : int;
 }
