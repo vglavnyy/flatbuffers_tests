@@ -377,10 +377,10 @@ return {
   // clang-format on
 }
 
-#define FBTR_(t) "root_type fbt."##t
-#define FBRT(t) FBTR_(t)##";"
-#define NSTF_(f) "/nst.JSONTestSuite/"##f
-#define NSTF(f) NSTF_(f)##".json"
+// FlatBuffers Test Root generator
+#define FBRT(rtype) "root_type fbt." rtype ";"
+// Name of test file form nst testset
+#define NSTF(fname) "/nst.JSONTestSuite/" fname ".json"
 
 //====================================================================
 // Dataset from [https://github.com/nst/JSONTestSuite]
